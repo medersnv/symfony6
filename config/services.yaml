@@ -22,3 +22,13 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Service\Converter:
+        alias: converter
+
+    converter:
+        autowire: false
+        class: App\Service\Converter
+        arguments:
+            $logger: '@monolog.logger'
+            $userEmail: 'msairakunov@gmail.com'
